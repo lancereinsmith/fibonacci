@@ -24,7 +24,7 @@ const string GRAY = "\033[90m";
 // Global variables
 long long t1, t2, nextTerm, sum;
 long long maxValue;
-double ratio;
+double fibRatio;
 
 // Function to clear screen
 void clearScreen() {
@@ -125,11 +125,11 @@ void generateFibonacci(int termCount, bool showStats, bool columnMode) {
             cout << "  Last term: " << t2 << endl;
             cout << "  Second-to-last term: " << t1 << endl;
             if (t1 != 0) {
-                ratio = (double)t2 / t1;
+                fibRatio = (double)t2 / t1;
                 cout << fixed << setprecision(10);
-                cout << "  Ratio (F(n)/F(n-1)): " << ratio << endl;
+                cout << "  Ratio (F(n)/F(n-1)): " << fibRatio << endl;
                 cout << "  Golden Ratio (φ): 1.6180339887" << endl;
-                cout << "  Difference: " << abs(ratio - 1.6180339887) << endl;
+                cout << "  Difference: " << abs(fibRatio - 1.6180339887) << endl;
             }
         }
         cout << endl;
