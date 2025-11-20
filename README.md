@@ -1,10 +1,14 @@
 # Enhanced Fibonacci Sequence Generator
 
-A multi-language implementation of an enhanced Fibonacci sequence generator with interactive menu options, statistics, and multiple display modes. Available in **Turbo Pascal**, **C++**, **Java**, **Common Lisp**, **Go**, **Fortran**, **Node.js**, **Swift**, **Ruby**, **Kotlin**, **Rust**, **PHP**, **Python**, **FreeBASIC**, **TypeScript**, and **Objective-C**.
+A multi-language implementation of an enhanced Fibonacci sequence generator with interactive menu options, statistics, and multiple display modes.
 
-## Features
+## Overview
 
-All three implementations include:
+This project implements the same Fibonacci sequence generator across 16 different programming languages, demonstrating language-specific features while maintaining consistent functionality.
+
+### Features
+
+All implementations include:
 
 - **Menu-driven interface** with 4 generation modes:
   1. Generate by number of terms
@@ -14,218 +18,19 @@ All three implementations include:
 
 - **Color-coded output** for better readability
 - **Input validation** with clear error messages
-- **Cross-platform compatibility**
+- **Cross-platform compatibility** (where applicable)
 
-## Prerequisites
+## Languages Implemented
 
-This guide assumes you have [Homebrew](https://brew.sh/) installed on macOS. If you don't have Homebrew, install it first:
+[**BASIC (FreeBASIC)**](#basic-freebasic) • [**C++**](#c) • [**Common Lisp**](#common-lisp) • [**Fortran**](#fortran) • [**Go**](#go) • [**Java**](#java) • [**Kotlin**](#kotlin) • [**Node.js**](#nodejs) • [**Objective-C**](#objective-c) • [**Pascal**](#pascal) • [**PHP**](#php) • [**Python**](#python) • [**Ruby**](#ruby) • [**Rust**](#rust) • [**Swift**](#swift) • [**TypeScript**](#typescript)
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+---
 
-## Installation
+## BASIC (FreeBASIC)
 
-### 1. Install Pascal Compiler (Free Pascal)
+### Installation
 
-Free Pascal is a Turbo Pascal-compatible compiler that works well on macOS:
-
-```bash
-brew install fpc
-```
-
-Verify installation:
-
-```bash
-fpc -v
-```
-
-### 2. Install C++ Compiler
-
-macOS comes with Clang, but you can also install GCC via Homebrew for better compatibility:
-
-```bash
-brew install gcc
-```
-
-Or use the built-in Clang (usually already available):
-
-```bash
-clang++ --version
-```
-
-### 3. Install Java Development Kit (JDK)
-
-Install OpenJDK via Homebrew:
-
-```bash
-brew install openjdk
-```
-
-After installation, you may need to link it:
-
-```bash
-sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-```
-
-Verify installation:
-
-```bash
-java -version
-javac -version
-```
-
-### 4. Install Common Lisp (SBCL)
-
-Install Steel Bank Common Lisp via Homebrew:
-
-```bash
-brew install sbcl
-```
-
-Verify installation:
-
-```bash
-sbcl --version
-```
-
-### 5. Install Go
-
-Install Go via Homebrew:
-
-```bash
-brew install go
-```
-
-Verify installation:
-
-```bash
-go version
-```
-
-### 6. Install Fortran Compiler (GFortran)
-
-Install GFortran via Homebrew:
-
-```bash
-brew install gcc
-```
-
-This installs GCC which includes gfortran. Verify installation:
-
-```bash
-gfortran --version
-```
-
-### 7. Install Node.js
-
-Install Node.js via Homebrew:
-
-```bash
-brew install node
-```
-
-Verify installation:
-
-```bash
-node --version
-npm --version
-```
-
-### 8. Install Swift
-
-Swift comes pre-installed on macOS with Xcode Command Line Tools. Verify installation:
-
-```bash
-swift --version
-```
-
-If not installed, install Xcode Command Line Tools:
-
-```bash
-xcode-select --install
-```
-
-### 9. Install Ruby
-
-Ruby comes pre-installed on macOS. Verify installation:
-
-```bash
-ruby --version
-```
-
-For the latest version, install via Homebrew:
-
-```bash
-brew install ruby
-```
-
-### 10. Install Kotlin
-
-Install Kotlin compiler via Homebrew:
-
-```bash
-brew install kotlin
-```
-
-Verify installation:
-
-```bash
-kotlin -version
-```
-
-### 11. Install Rust
-
-Install Rust via rustup (the recommended way):
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-Or via Homebrew:
-
-```bash
-brew install rust
-```
-
-Verify installation:
-
-```bash
-rustc --version
-cargo --version
-```
-
-### 12. Install PHP
-
-PHP comes pre-installed on macOS. Verify installation:
-
-```bash
-php --version
-```
-
-For the latest version, install via Homebrew:
-
-```bash
-brew install php
-```
-
-### 13. Install Python 3
-
-Python 3 comes pre-installed on macOS. Verify installation:
-
-```bash
-python3 --version
-```
-
-For the latest version, install via Homebrew:
-
-```bash
-brew install python
-```
-
-### 14. Install FreeBASIC
-
-FreeBASIC is not available via Homebrew. Download and install manually from the official website:
+FreeBASIC is not available via Homebrew. Download and install manually:
 
 **Option 1: Download Pre-built Binary (Recommended)**
 
@@ -251,15 +56,740 @@ Verify installation:
 fbc -version
 ```
 
-**Note:** You may need to add FreeBASIC to your PATH. If `fbc` is not found, add this to your `~/.zshrc` or `~/.bash_profile`:
+### Compilation & Running
+
+**Compile:**
 
 ```bash
-export PATH="/usr/local/bin:$PATH"
+cd basic
+fbc fibonacci.bas
 ```
 
-### 15. Install TypeScript
+**Run:**
 
-Install TypeScript and ts-node via npm (comes with Node.js):
+```bash
+./fibonacci
+```
+
+**Note:** FreeBASIC uses LongInt (64-bit), supporting max 92 terms. Compatible with QuickBASIC.
+
+### Troubleshooting
+
+**Problem:** `fbc: command not found`
+- **Solution:** Download from [freebasic.net](https://www.freebasic.net/) or install via MacPorts: `sudo port install freebasic`
+
+**Problem:** Installation script fails
+- **Solution:** Run with sudo: `sudo ./install.sh -i`. Grant permissions in System Preferences → Security & Privacy.
+
+**Problem:** PATH not set after installation
+- **Solution:** Add to `~/.zshrc`: `export PATH="/usr/local/bin:$PATH"`, then run `source ~/.zshrc`
+
+**Problem:** Colors don't appear
+- **Solution:** FreeBASIC uses ANSI escape codes. Most modern terminals support them.
+
+---
+
+## C++
+
+### Installation
+
+macOS comes with Clang. You can also install GCC via Homebrew:
+
+```bash
+brew install gcc
+```
+
+Or verify the built-in Clang:
+
+```bash
+clang++ --version
+```
+
+### Compilation & Running
+
+**Compile:**
+
+```bash
+cd c++
+# Using Clang (default on macOS)
+clang++ -o fibonnaci fibonnaci.cpp
+
+# Or using GCC (if installed)
+g++ -o fibonnaci fibonnaci.cpp
+```
+
+**Run:**
+
+```bash
+./fibonnaci
+```
+
+**Note:** Uses ANSI escape codes for colors. Supports max 92 terms with `long long`.
+
+### Troubleshooting
+
+**Problem:** `clang++: command not found`
+- **Solution:** Install Xcode Command Line Tools: `xcode-select --install`
+
+**Problem:** Colors don't appear
+- **Solution:** Ensure your terminal supports ANSI escape codes (Terminal.app, iTerm2).
+
+---
+
+## Common Lisp
+
+### Installation
+
+Install Steel Bank Common Lisp (SBCL) via Homebrew:
+
+```bash
+brew install sbcl
+```
+
+Verify installation:
+
+```bash
+sbcl --version
+```
+
+### Compilation & Running
+
+**Run directly with SBCL:**
+
+```bash
+cd lisp
+sbcl --script fibonacci.lisp
+```
+
+**Or compile and run in REPL:**
+
+```bash
+sbcl
+# In the SBCL REPL:
+(load "fibonacci.lisp")
+```
+
+**Note:** Supports max 92 terms (limited for consistency, though capable of more with bignums).
+
+### Troubleshooting
+
+**Problem:** `sbcl: command not found`
+- **Solution:** Install SBCL: `brew install sbcl`
+
+**Problem:** Script exits immediately
+- **Solution:** Run with `sbcl --script fibonacci.lisp`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes may not work in all terminals. Try Terminal.app or iTerm2.
+
+---
+
+## Fortran
+
+### Installation
+
+Install GFortran (part of GCC) via Homebrew:
+
+```bash
+brew install gcc
+```
+
+Verify installation:
+
+```bash
+gfortran --version
+```
+
+### Compilation & Running
+
+**Compile:**
+
+```bash
+cd fortran
+gfortran -o fibonacci fibonacci.f90
+```
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Note:** Uses `integer(kind=8)` for 64-bit integers. Supports max 92 terms.
+
+### Troubleshooting
+
+**Problem:** `gfortran: command not found`
+- **Solution:** Install GCC: `brew install gcc`
+
+**Problem:** Compilation errors
+- **Solution:** Ensure Fortran 90+ compatible compiler. GFortran works out of the box.
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in most modern terminals.
+
+---
+
+## Go
+
+### Installation
+
+Install Go via Homebrew:
+
+```bash
+brew install go
+```
+
+Verify installation:
+
+```bash
+go version
+```
+
+### Compilation & Running
+
+**Compile:**
+
+```bash
+cd go
+go build fibonacci.go
+```
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Or compile and run in one step:**
+
+```bash
+go run fibonacci.go
+```
+
+**Note:** Uses `int64` for 64-bit integers. Supports max 92 terms.
+
+### Troubleshooting
+
+**Problem:** `go: command not found`
+- **Solution:** Install Go: `brew install go`
+
+**Problem:** Import errors
+- **Solution:** Ensure Go 1.11 or later: `go version`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in most modern terminals.
+
+---
+
+## Java
+
+### Installation
+
+Install OpenJDK via Homebrew:
+
+```bash
+brew install openjdk
+```
+
+Link the installation:
+
+```bash
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+```
+
+Verify installation:
+
+```bash
+java -version
+javac -version
+```
+
+### Compilation & Running
+
+**Compile:**
+
+```bash
+cd java
+javac Fibonacci.java
+```
+
+**Run:**
+
+```bash
+java Fibonacci
+```
+
+**Note:** Uses `long` (64-bit). Supports max 92 terms.
+
+### Troubleshooting
+
+**Problem:** `javac: command not found`
+- **Solution:** Install and link OpenJDK: `brew reinstall openjdk`
+
+**Problem:** `java: command not found`
+- **Solution:** Add Java to PATH or use full path: `/opt/homebrew/opt/openjdk/bin/java Fibonacci`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in most terminals.
+
+---
+
+## Kotlin
+
+### Installation
+
+Install Kotlin compiler via Homebrew:
+
+```bash
+brew install kotlin
+```
+
+Verify installation:
+
+```bash
+kotlin -version
+```
+
+### Compilation & Running
+
+**Compile and run:**
+
+```bash
+cd kotlin
+kotlinc fibonacci.kt -include-runtime -d fibonacci.jar
+java -jar fibonacci.jar
+```
+
+**Or run as script (requires Kotlin 1.3.70+):**
+
+```bash
+kotlin fibonacci.kt
+```
+
+**Note:** Uses `Long` (64-bit). Supports max 92 terms. Compilation can be slow.
+
+### Troubleshooting
+
+**Problem:** `kotlinc: command not found`
+- **Solution:** Install Kotlin: `brew install kotlin`
+
+**Problem:** Compilation takes a long time
+- **Solution:** Use script mode: `kotlin fibonacci.kt`
+
+**Problem:** `java: command not found` when running JAR
+- **Solution:** Install OpenJDK: `brew install openjdk`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in most terminals.
+
+---
+
+## Node.js
+
+### Installation
+
+Install Node.js via Homebrew:
+
+```bash
+brew install node
+```
+
+Verify installation:
+
+```bash
+node --version
+npm --version
+```
+
+### Compilation & Running
+
+**Run directly:**
+
+```bash
+cd nodejs
+node fibonacci.js
+```
+
+**Or make executable:**
+
+```bash
+chmod +x fibonacci.js
+./fibonacci.js
+```
+
+**Note:** Uses `BigInt` for arbitrary precision. Supports up to 1476 terms.
+
+### Troubleshooting
+
+**Problem:** `node: command not found`
+- **Solution:** Install Node.js: `brew install node`
+
+**Problem:** `SyntaxError: BigInt is not defined`
+- **Solution:** Requires Node.js 10.4.0+. Update: `brew upgrade node`
+
+**Problem:** Permission denied
+- **Solution:** Make executable: `chmod +x fibonacci.js`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in Terminal.app and iTerm2.
+
+---
+
+## Objective-C
+
+### Installation
+
+Objective-C compiler (clang) comes with Xcode Command Line Tools:
+
+```bash
+xcode-select --install
+```
+
+Verify installation:
+
+```bash
+clang --version
+```
+
+### Compilation & Running
+
+**Compile with Makefile:**
+
+```bash
+cd objc
+make
+```
+
+**Or compile directly:**
+
+```bash
+clang -framework Foundation -fobjc-arc -o fibonacci fibonacci.m
+```
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Note:** Uses `long long` (64-bit). Supports max 92 terms. Uses Foundation framework and ARC.
+
+### Troubleshooting
+
+**Problem:** `clang: command not found`
+- **Solution:** Install Xcode Command Line Tools: `xcode-select --install`
+
+**Problem:** `framework not found Foundation`
+- **Solution:** Reset Xcode tools: `sudo xcode-select --reset`
+
+**Problem:** Compilation errors with ARC
+- **Solution:** Compile with `-fobjc-arc` flag.
+
+**Problem:** `make: command not found`
+- **Solution:** Install Xcode Command Line Tools or compile directly with clang.
+
+---
+
+## Pascal
+
+### Installation
+
+Install Free Pascal via Homebrew:
+
+```bash
+brew install fpc
+```
+
+Verify installation:
+
+```bash
+fpc -v
+```
+
+### Compilation & Running
+
+**Compile:**
+
+```bash
+cd pascal
+fpc fibonnaci.pas
+```
+
+**Run:**
+
+```bash
+./fibonnaci
+```
+
+**Note:** Uses `LongInt` (32-bit). Supports max 46 terms. Compatible with Turbo Pascal.
+
+### Troubleshooting
+
+**Problem:** `Error: Can't find unit crt`
+- **Solution:** Free Pascal should include `crt` unit. Reinstall if needed.
+
+**Problem:** Colors don't work
+- **Solution:** Some terminals don't support all Turbo Pascal color features.
+
+---
+
+## PHP
+
+### Installation
+
+PHP comes pre-installed on macOS. Verify:
+
+```bash
+php --version
+```
+
+For the latest version:
+
+```bash
+brew install php
+```
+
+### Compilation & Running
+
+**Run directly:**
+
+```bash
+cd php
+php fibonacci.php
+```
+
+**Or make executable:**
+
+```bash
+chmod +x fibonacci.php
+./fibonacci.php
+```
+
+**Note:** Arbitrary precision integers. Supports up to 1476 terms.
+
+### Troubleshooting
+
+**Problem:** `php: command not found`
+- **Solution:** Install via Homebrew: `brew install php`
+
+**Problem:** Permission denied
+- **Solution:** Make executable: `chmod +x fibonacci.php`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in most terminals.
+
+---
+
+## Python
+
+### Installation
+
+Python 3 comes pre-installed on macOS. Verify:
+
+```bash
+python3 --version
+```
+
+For the latest version:
+
+```bash
+brew install python
+```
+
+### Compilation & Running
+
+**Run directly:**
+
+```bash
+cd python
+python3 fibonacci.py
+```
+
+**Or make executable:**
+
+```bash
+chmod +x fibonacci.py
+./fibonacci.py
+```
+
+**Note:** Arbitrary precision integers. Supports up to 1476 terms. Requires Python 3.6+.
+
+### Troubleshooting
+
+**Problem:** `python3: command not found`
+- **Solution:** Install via Homebrew: `brew install python`
+
+**Problem:** Permission denied
+- **Solution:** Make executable: `chmod +x fibonacci.py`
+
+**Problem:** `ModuleNotFoundError`
+- **Solution:** Uses only standard library. Ensure Python 3.6+: `python3 --version`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in most terminals.
+
+---
+
+## Ruby
+
+### Installation
+
+Ruby comes pre-installed on macOS. Verify:
+
+```bash
+ruby --version
+```
+
+For the latest version:
+
+```bash
+brew install ruby
+```
+
+### Compilation & Running
+
+**Run directly:**
+
+```bash
+cd ruby
+ruby fibonacci.rb
+```
+
+**Or make executable:**
+
+```bash
+chmod +x fibonacci.rb
+./fibonacci.rb
+```
+
+**Note:** Arbitrary precision integers. Supports up to 1476 terms.
+
+### Troubleshooting
+
+**Problem:** `ruby: command not found`
+- **Solution:** Install via Homebrew: `brew install ruby`
+
+**Problem:** Permission denied
+- **Solution:** Make executable: `chmod +x fibonacci.rb`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in most terminals.
+
+---
+
+## Rust
+
+### Installation
+
+Install Rust via rustup (recommended):
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Or via Homebrew:
+
+```bash
+brew install rust
+```
+
+Verify installation:
+
+```bash
+rustc --version
+cargo --version
+```
+
+### Compilation & Running
+
+**Compile:**
+
+```bash
+cd rust
+rustc fibonacci.rs
+```
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Note:** Uses `i64` (64-bit). Supports max 92 terms. Highly optimized compiled binary.
+
+### Troubleshooting
+
+**Problem:** `rustc: command not found`
+- **Solution:** Install via rustup: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+**Problem:** Compilation warnings
+- **Solution:** Code should compile cleanly. Warnings are informational.
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in most modern terminals.
+
+---
+
+## Swift
+
+### Installation
+
+Swift comes pre-installed with Xcode Command Line Tools. Verify:
+
+```bash
+swift --version
+```
+
+If not installed:
+
+```bash
+xcode-select --install
+```
+
+### Compilation & Running
+
+**Run directly:**
+
+```bash
+cd swift
+swift fibonacci.swift
+```
+
+**Or make executable:**
+
+```bash
+chmod +x fibonacci.swift
+./fibonacci.swift
+```
+
+**Or compile for better performance:**
+
+```bash
+swiftc -o fibonacci fibonacci.swift
+./fibonacci
+```
+
+**Note:** Uses `Int64` (64-bit). Supports max 92 terms.
+
+### Troubleshooting
+
+**Problem:** `swift: command not found`
+- **Solution:** Install Xcode Command Line Tools: `xcode-select --install`
+
+**Problem:** Compilation is slow
+- **Solution:** Use interpreted mode: `swift fibonacci.swift`
+
+**Problem:** Colors don't appear
+- **Solution:** ANSI escape codes work in modern terminals.
+
+---
+
+## TypeScript
+
+### Installation
+
+Install TypeScript and ts-node via npm:
 
 ```bash
 npm install -g typescript ts-node
@@ -279,286 +809,7 @@ tsc --version
 ts-node --version
 ```
 
-### 16. Objective-C Compiler
-
-Objective-C compiler (clang) comes with Xcode Command Line Tools on macOS. Verify installation:
-
-```bash
-clang --version
-```
-
-If not installed:
-
-```bash
-xcode-select --install
-```
-
-## Compilation & Running
-
-### Turbo Pascal (`fibonnaci.pas`)
-
-**Compile:**
-
-```bash
-fpc fibonnaci.pas
-```
-
-This will create an executable named `fibonnaci` (or `fibonnaci.exe` on some systems).
-
-**Run:**
-
-```bash
-./fibonnaci
-```
-
-**Note:** If you encounter issues with the `crt` unit (used for screen clearing and colors), Free Pascal should handle it, but some terminal emulators may not support all color features.
-
-### C++ (`fibonnaci.cpp`)
-
-**Compile:**
-
-```bash
-# Using Clang (default on macOS)
-clang++ -o fibonnaci fibonnaci.cpp
-
-# Or using GCC (if installed via Homebrew)
-g++ -o fibonnaci fibonnaci.cpp
-```
-
-**Run:**
-
-```bash
-./fibonnaci
-```
-
-**Note:** The C++ version uses ANSI escape codes for colors, which work in most modern terminals (Terminal.app, iTerm2, etc.).
-
-### Java (`Fibonacci.java`)
-
-**Compile:**
-
-```bash
-javac Fibonacci.java
-```
-
-This creates `Fibonacci.class` in the same directory.
-
-**Run:**
-
-```bash
-java Fibonacci
-```
-
-**Note:** Java uses ANSI escape codes for colors. If colors don't appear, your terminal may not support them, but the program will still function correctly.
-
-### Common Lisp (`fibonacci.lisp`)
-
-**Run directly with SBCL:**
-
-```bash
-sbcl --script fibonacci.lisp
-```
-
-**Or compile and run:**
-
-```bash
-# Start SBCL
-sbcl
-
-# In the SBCL REPL:
-(load "fibonacci.lisp")
-```
-
-**Note:** The Lisp version uses ANSI escape codes for colors. For best results, run in a terminal that supports ANSI codes.
-
-### Go (`fibonacci.go`)
-
-**Compile:**
-
-```bash
-go build fibonacci.go
-```
-
-This creates an executable named `fibonacci` in the same directory.
-
-**Run:**
-
-```bash
-./fibonacci
-```
-
-**Or compile and run in one step:**
-
-```bash
-go run fibonacci.go
-```
-
-**Note:** Go uses ANSI escape codes for colors, which work in most modern terminals.
-
-### Fortran (`fibonacci.f90`)
-
-**Compile:**
-
-```bash
-gfortran -o fibonacci fibonacci.f90
-```
-
-This creates an executable named `fibonacci`.
-
-**Run:**
-
-```bash
-./fibonacci
-```
-
-**Note:** The Fortran version uses ANSI escape codes for colors. Modern Fortran compilers like GFortran support these well.
-
-### Node.js (`fibonacci.js`)
-
-**Run directly:**
-
-```bash
-node fibonacci.js
-```
-
-**Or make it executable and run:**
-
-```bash
-chmod +x fibonacci.js
-./fibonacci.js
-```
-
-**Note:** The Node.js version uses BigInt for arbitrary precision arithmetic, allowing it to calculate up to 1476 terms before running into JavaScript's Number precision limits. It uses ANSI escape codes for colors which work in most modern terminals.
-
-### Swift (`fibonacci.swift`)
-
-**Run directly:**
-
-```bash
-swift fibonacci.swift
-```
-
-**Or make it executable and run:**
-
-```bash
-chmod +x fibonacci.swift
-./fibonacci.swift
-```
-
-**Or compile for better performance:**
-
-```bash
-swiftc -o fibonacci fibonacci.swift
-./fibonacci
-```
-
-**Note:** Swift uses Int64 for 64-bit integers (max 92 terms). ANSI colors work in modern terminals.
-
-### Ruby (`fibonacci.rb`)
-
-**Run directly:**
-
-```bash
-ruby fibonacci.rb
-```
-
-**Or make it executable and run:**
-
-```bash
-chmod +x fibonacci.rb
-./fibonacci.rb
-```
-
-**Note:** Ruby has arbitrary precision integers, supporting up to 1476 terms. ANSI colors work in most terminals.
-
-### Kotlin (`fibonacci.kt`)
-
-**Compile and run using kotlinc:**
-
-```bash
-kotlinc fibonacci.kt -include-runtime -d fibonacci.jar
-java -jar fibonacci.jar
-```
-
-**Or run as a script (requires Kotlin 1.3.70+):**
-
-```bash
-kotlin fibonacci.kt
-```
-
-**Note:** Kotlin uses Long (64-bit) for integers, supporting max 92 terms. Compilation can be slow; use script mode for faster development.
-
-### Rust (`fibonacci.rs`)
-
-**Compile:**
-
-```bash
-rustc fibonacci.rs
-```
-
-This creates an executable named `fibonacci`.
-
-**Run:**
-
-```bash
-./fibonacci
-```
-
-**Note:** Rust uses i64 (64-bit signed integers), supporting max 92 terms. The compiled binary is highly optimized and fast.
-
-### PHP (`fibonacci.php`)
-
-**Run directly:**
-
-```bash
-php fibonacci.php
-```
-
-**Or make it executable and run:**
-
-```bash
-chmod +x fibonacci.php
-./fibonacci.php
-```
-
-**Note:** PHP has arbitrary precision with integers, supporting up to 1476 terms. ANSI colors work in most terminals.
-
-### Python (`fibonacci.py`)
-
-**Run directly:**
-
-```bash
-python3 fibonacci.py
-```
-
-**Or make it executable and run:**
-
-```bash
-chmod +x fibonacci.py
-./fibonacci.py
-```
-
-**Note:** Python has built-in arbitrary precision integers, supporting up to 1476 terms. ANSI colors work in most terminals. Works with Python 3.6+.
-
-### FreeBASIC (`fibonacci.bas`)
-
-**Compile:**
-
-```bash
-fbc fibonacci.bas
-```
-
-This creates an executable named `fibonacci` (or `fibonacci.exe` on Windows).
-
-**Run:**
-
-```bash
-./fibonacci
-```
-
-**Note:** FreeBASIC uses LongInt (64-bit), supporting max 92 terms. ANSI colors work in most terminals. FreeBASIC is a modern, free BASIC compiler compatible with QuickBASIC.
-
-### TypeScript (`fibonacci.ts`)
+### Compilation & Running
 
 **Option 1: Run with ts-node (Development)**
 
@@ -585,34 +836,27 @@ tsc fibonacci.ts
 node fibonacci.js
 ```
 
-**Note:** TypeScript uses BigInt for arbitrary precision, supporting up to 1476 terms. Requires Node.js 10.4.0+ for BigInt support.
+**Note:** Uses `BigInt` for arbitrary precision. Supports up to 1476 terms. Requires Node.js 10.4.0+.
 
-### Objective-C (`fibonacci.m`)
+### Troubleshooting
 
-**Compile with Makefile:**
+**Problem:** `tsc: command not found` or `ts-node: command not found`
+- **Solution:** Install globally: `npm install -g typescript ts-node` or run `npm install` in typescript directory
 
-```bash
-cd objc
-make
-```
+**Problem:** `Cannot find module` errors
+- **Solution:** Run `npm install` in the typescript directory
 
-**Or compile directly with clang:**
+**Problem:** BigInt errors
+- **Solution:** Requires Node.js 10.4.0+ and TypeScript 3.2+. Update: `npm install -g typescript@latest`
 
-```bash
-clang -framework Foundation -fobjc-arc -o fibonacci fibonacci.m
-```
+**Problem:** Compilation target errors
+- **Solution:** tsconfig.json uses ES2020. Ensure Node.js supports this target.
 
-**Run:**
-
-```bash
-./fibonacci
-```
-
-**Note:** Objective-C uses long long (64-bit), supporting max 92 terms. Uses Foundation framework and ARC (Automatic Reference Counting). Native to macOS with excellent performance.
+---
 
 ## Program Usage
 
-When you run any of the programs, you'll see a menu:
+When you run any of the programs, you'll see this menu:
 
 ```text
 ===============================================
@@ -654,352 +898,120 @@ Generates Fibonacci numbers and displays:
 
 Generates Fibonacci numbers in a neatly aligned column format (10 numbers per line).
 
+---
+
 ## Technical Details
 
 ### Maximum Terms Supported
 
-- **Pascal:** Up to 46 terms (using `LongInt`)
-- **C++:** Up to 92 terms (using `long long`)
-- **Java:** Up to 92 terms (using `long`)
-- **Common Lisp:** Up to 92 terms (using fixnum/bignum, but limited to 92 for consistency)
-- **Go:** Up to 92 terms (using `int64`)
-- **Fortran:** Up to 92 terms (using `integer(kind=8)`)
-- **Node.js:** Up to 1476 terms (using `BigInt` for arbitrary precision)
-- **Swift:** Up to 92 terms (using `Int64`)
-- **Ruby:** Up to 1476 terms (arbitrary precision integers)
-- **Kotlin:** Up to 92 terms (using `Long`)
-- **Rust:** Up to 92 terms (using `i64`)
-- **PHP:** Up to 1476 terms (arbitrary precision integers)
-- **Python:** Up to 1476 terms (arbitrary precision integers)
-- **FreeBASIC:** Up to 92 terms (using `LongInt`)
-- **TypeScript:** Up to 1476 terms (using `BigInt` for arbitrary precision)
-- **Objective-C:** Up to 92 terms (using `long long`)
+| Language | Max Terms | Data Type |
+|----------|-----------|-----------|
+| Pascal | 46 | `LongInt` (32-bit) |
+| C++ | 92 | `long long` (64-bit) |
+| Java | 92 | `long` (64-bit) |
+| Common Lisp | 92 | fixnum/bignum |
+| Go | 92 | `int64` (64-bit) |
+| Fortran | 92 | `integer(kind=8)` (64-bit) |
+| Swift | 92 | `Int64` (64-bit) |
+| Kotlin | 92 | `Long` (64-bit) |
+| Rust | 92 | `i64` (64-bit) |
+| Objective-C | 92 | `long long` (64-bit) |
+| FreeBASIC | 92 | `LongInt` (64-bit) |
+| Node.js | 1476 | `BigInt` (arbitrary precision) |
+| Ruby | 1476 | Integer (arbitrary precision) |
+| PHP | 1476 | Integer (arbitrary precision) |
+| Python | 1476 | int (arbitrary precision) |
+| TypeScript | 1476 | `BigInt` (arbitrary precision) |
 
 ### Color Support
 
-All programs use ANSI escape codes for terminal colors. If your terminal doesn't support colors, the programs will still function, but output will appear without color formatting.
+All programs use ANSI escape codes for terminal colors. If your terminal doesn't support colors, programs will still function without color formatting.
 
 ### Platform Compatibility
 
-- **Pascal:** Free Pascal is cross-platform; this code is compatible with Turbo Pascal
-- **C++:** Standard C++11 features; compatible with Clang and GCC
-- **Java:** Java 8+ compatible; uses standard Java libraries only
-- **Common Lisp:** SBCL compatible; should work with other Common Lisp implementations
-- **Go:** Go 1.11+ compatible; uses standard library only
-- **Fortran:** Fortran 90+ standard; compatible with GFortran and other modern compilers
-- **Node.js:** Node.js 10.4.0+ (requires BigInt support); uses built-in modules only
-- **Swift:** Swift 5.0+ compatible; works on macOS, Linux, and Windows
-- **Ruby:** Ruby 2.0+ compatible; uses standard library only
-- **Kotlin:** Kotlin 1.3+ compatible; requires JVM to run
-- **Rust:** Rust 1.40+ compatible; uses standard library only
-- **PHP:** PHP 7.0+ compatible; uses standard functions only
-- **Python:** Python 3.6+ compatible; uses standard library only
-- **FreeBASIC:** FreeBASIC 1.0+ compatible; cross-platform (macOS, Linux, Windows)
-- **TypeScript:** TypeScript 4.0+; requires Node.js 10.4.0+ for BigInt support
-- **Objective-C:** macOS/iOS compatible; uses Foundation framework
-
-## Troubleshooting
-
-### Pascal Issues
-
-**Problem:** `Error: Can't find unit crt`
-
-- **Solution:** Free Pascal should include the `crt` unit. If not, try installing a different Pascal compiler or use the `crt` unit from Free Pascal's standard library.
-
-**Problem:** Colors don't work
-
-- **Solution:** Some terminal emulators don't support all Turbo Pascal color features. The program will still work, just without colors.
-
-### C++ Issues
-
-**Problem:** `clang++: command not found`
-
-- **Solution:** Install Xcode Command Line Tools: `xcode-select --install`
-
-**Problem:** Colors don't appear
-
-- **Solution:** Ensure your terminal supports ANSI escape codes. Try using Terminal.app or iTerm2.
-
-### Java Issues
-
-**Problem:** `javac: command not found`
-
-- **Solution:** Make sure OpenJDK is properly installed and linked. Try: `brew reinstall openjdk`
-
-**Problem:** `java: command not found`
-
-- **Solution:** Add Java to your PATH or use the full path: `/opt/homebrew/opt/openjdk/bin/java Fibonacci`
-
-**Problem:** Colors don't appear
-
-- **Solution:** Java uses ANSI escape codes. If your terminal doesn't support them, the program will still work without colors.
-
-### Common Lisp Issues
-
-**Problem:** `sbcl: command not found`
-
-- **Solution:** Make sure SBCL is properly installed: `brew install sbcl`
-
-**Problem:** Script exits immediately
-
-- **Solution:** When using `--script`, make sure the file is executable or run it with `sbcl --script fibonacci.lisp`
-
-**Problem:** Colors don't appear
-
-- **Solution:** ANSI escape codes may not work in all terminals. Try Terminal.app or iTerm2.
-
-### Go Issues
-
-**Problem:** `go: command not found`
-
-- **Solution:** Make sure Go is properly installed and in your PATH: `brew install go`
-
-**Problem:** Colors don't appear
-
-- **Solution:** Go uses ANSI escape codes. Most modern terminals support them by default.
-
-**Problem:** Import errors
-
-- **Solution:** Make sure you're running Go 1.11 or later: `go version`
-
-### Fortran Issues
-
-**Problem:** `gfortran: command not found`
-
-- **Solution:** Install GCC which includes gfortran: `brew install gcc`
-
-**Problem:** Compilation errors
-
-- **Solution:** Make sure you're using a Fortran 90+ compatible compiler. GFortran should work out of the box.
-
-**Problem:** Colors don't appear
-
-- **Solution:** The program uses ANSI escape codes. If your terminal doesn't support them, you can modify the color constants in the source code.
-
-### Node.js Issues
-
-**Problem:** `node: command not found`
-
-- **Solution:** Install Node.js: `brew install node`
-
-**Problem:** `SyntaxError: BigInt is not defined`
-
-- **Solution:** Make sure you're using Node.js 10.4.0 or later: `node --version`. Update if necessary: `brew upgrade node`
-
-**Problem:** Colors don't appear
-
-- **Solution:** Node.js uses ANSI escape codes. Most modern terminals (Terminal.app, iTerm2) support them by default.
-
-**Problem:** Permission denied when running `./fibonacci.js`
-
-- **Solution:** Make the file executable: `chmod +x fibonacci.js`
-
-### Swift Issues
-
-**Problem:** `swift: command not found`
-
-- **Solution:** Install Xcode Command Line Tools: `xcode-select --install`
-
-**Problem:** Compilation is slow
-
-- **Solution:** Swift is an optimizing compiler. For faster iteration, use interpreted mode: `swift fibonacci.swift`
-
-**Problem:** Colors don't appear
-
-- **Solution:** Make sure you're using a terminal that supports ANSI escape codes.
-
-### Ruby Issues
-
-**Problem:** `ruby: command not found`
-
-- **Solution:** Ruby should be pre-installed on macOS. If missing, install via Homebrew: `brew install ruby`
-
-**Problem:** Permission denied when running `./fibonacci.rb`
-
-- **Solution:** Make the file executable: `chmod +x fibonacci.rb`
-
-**Problem:** Colors don't appear
-
-- **Solution:** Ruby uses ANSI escape codes. Most terminals support them by default.
-
-### Kotlin Issues
-
-**Problem:** `kotlinc: command not found`
-
-- **Solution:** Install Kotlin: `brew install kotlin`
-
-**Problem:** Compilation takes a long time
-
-- **Solution:** Kotlin compilation can be slow. Consider using script mode: `kotlin fibonacci.kt` (may require Kotlin 1.3.70+)
-
-**Problem:** `java: command not found` when running the JAR
-
-- **Solution:** Kotlin requires Java to run. Install OpenJDK: `brew install openjdk`
-
-**Problem:** Colors don't appear
-
-- **Solution:** ANSI escape codes should work in most terminals.
-
-### Rust Issues
-
-**Problem:** `rustc: command not found`
-
-- **Solution:** Install Rust via rustup: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-
-**Problem:** Compilation warnings
-
-- **Solution:** Rust is strict about safety. The code should compile without warnings. If you see warnings, they're informational.
-
-**Problem:** Colors don't appear
-
-- **Solution:** Rust uses ANSI escape codes. Most modern terminals support them.
-
-### PHP Issues
-
-**Problem:** `php: command not found`
-
-- **Solution:** PHP should be pre-installed on macOS. If missing, install via Homebrew: `brew install php`
-
-**Problem:** Permission denied when running `./fibonacci.php`
-
-- **Solution:** Make the file executable: `chmod +x fibonacci.php`
-
-**Problem:** Colors don't appear
-
-- **Solution:** PHP uses ANSI escape codes. Most terminals support them by default.
-
-### Python Issues
-
-**Problem:** `python3: command not found`
-
-- **Solution:** Python 3 should be pre-installed on macOS. If missing, install via Homebrew: `brew install python`
-
-**Problem:** Permission denied when running `./fibonacci.py`
-
-- **Solution:** Make the file executable: `chmod +x fibonacci.py`
-
-**Problem:** Colors don't appear
-
-- **Solution:** Python uses ANSI escape codes. Most terminals support them by default.
-
-**Problem:** `ModuleNotFoundError`
-
-- **Solution:** This program uses only Python's standard library. Make sure you're using Python 3.6 or later: `python3 --version`
-
-### FreeBASIC Issues
-
-**Problem:** `fbc: command not found`
-
-- **Solution:** FreeBASIC is not available via Homebrew. Download from [freebasic.net](https://www.freebasic.net/) or install via MacPorts: `sudo port install freebasic`
-
-**Problem:** Installation script fails
-
-- **Solution:** Make sure you run the install script with sudo: `sudo ./install.sh -i`. You may need to grant permissions in System Preferences → Security & Privacy.
-
-**Problem:** Compilation errors
-
-- **Solution:** Make sure you're using FreeBASIC 1.0 or later: `fbc -version`
-
-**Problem:** Colors don't appear
-
-- **Solution:** FreeBASIC uses ANSI escape codes. Most modern terminals support them.
-
-**Problem:** `Error: No such file or directory`
-
-- **Solution:** FreeBASIC requires explicit compilation. Use: `fbc fibonacci.bas` then `./fibonacci`
-
-**Problem:** PATH not set after installation
-
-- **Solution:** Add FreeBASIC to your PATH by adding `export PATH="/usr/local/bin:$PATH"` to your `~/.zshrc` file, then run `source ~/.zshrc`
-
-### TypeScript Issues
-
-**Problem:** `tsc: command not found` or `ts-node: command not found`
-
-- **Solution:** Install TypeScript and ts-node: `npm install -g typescript ts-node` or run `npm install` in the typescript directory
-
-**Problem:** `Cannot find module` errors
-
-- **Solution:** Run `npm install` in the typescript directory to install dependencies
-
-**Problem:** BigInt errors
-
-- **Solution:** Make sure you're using Node.js 10.4.0+ and TypeScript 3.2+. Update if necessary: `npm install -g typescript@latest`
-
-**Problem:** Compilation target errors
-
-- **Solution:** The tsconfig.json is configured for ES2020. Make sure your Node.js version supports this target.
-
-### Objective-C Issues
-
-**Problem:** `clang: command not found`
-
-- **Solution:** Install Xcode Command Line Tools: `xcode-select --install`
-
-**Problem:** `framework not found Foundation`
-
-- **Solution:** This usually means Xcode Command Line Tools aren't properly installed. Try: `sudo xcode-select --reset`
-
-**Problem:** Compilation errors with ARC
-
-- **Solution:** The code uses Automatic Reference Counting (ARC). Make sure you compile with `-fobjc-arc` flag.
-
-**Problem:** `make: command not found`
-
-- **Solution:** Install Xcode Command Line Tools or compile directly: `clang -framework Foundation -fobjc-arc -o fibonacci fibonacci.m`
-
-### General Issues
-
-**Problem:** Screen doesn't clear
-
-- **Solution:** The screen clearing function may not work in all terminals. This is normal and doesn't affect functionality.
-
-**Problem:** Program exits immediately
-
-- **Solution:** The program waits for you to press ENTER at the end. Make sure you're running it in an interactive terminal, not redirecting input.
+- **Pascal:** Cross-platform, Turbo Pascal compatible
+- **C++:** C++11 standard, Clang and GCC compatible
+- **Java:** Java 8+, standard libraries only
+- **Common Lisp:** SBCL compatible
+- **Go:** Go 1.11+, standard library only
+- **Fortran:** Fortran 90+ standard
+- **Node.js:** Node.js 10.4.0+ (BigInt support)
+- **Swift:** Swift 5.0+, macOS/Linux/Windows
+- **Ruby:** Ruby 2.0+, standard library only
+- **Kotlin:** Kotlin 1.3+, requires JVM
+- **Rust:** Rust 1.40+, standard library only
+- **PHP:** PHP 7.0+, standard functions only
+- **Python:** Python 3.6+, standard library only
+- **FreeBASIC:** FreeBASIC 1.0+, cross-platform
+- **TypeScript:** TypeScript 4.0+, Node.js 10.4.0+
+- **Objective-C:** macOS/iOS, Foundation framework
+
+---
 
 ## File Structure
 
 ```text
 fibonacci/
-├── pascal/
-│   └── fibonnaci.pas      # Turbo Pascal source
-├── c++/
-│   └── fibonnaci.cpp      # C++ source
-├── java/
-│   └── Fibonacci.java     # Java source
-├── lisp/
-│   └── fibonacci.lisp     # Common Lisp source
-├── go/
-│   └── fibonacci.go       # Go source
-├── fortran/
-│   └── fibonacci.f90      # Fortran source
-├── nodejs/
-│   └── fibonacci.js       # Node.js source
-├── swift/
-│   └── fibonacci.swift    # Swift source
-├── ruby/
-│   └── fibonacci.rb       # Ruby source
-├── kotlin/
-│   └── fibonacci.kt       # Kotlin source
-├── rust/
-│   └── fibonacci.rs       # Rust source
-├── php/
-│   └── fibonacci.php      # PHP source
-├── python/
-│   └── fibonacci.py       # Python source
 ├── basic/
-│   └── fibonacci.bas      # FreeBASIC source
-├── typescript/
-│   ├── fibonacci.ts       # TypeScript source
-│   ├── package.json       # Node.js dependencies
-│   └── tsconfig.json      # TypeScript config
+│   └── fibonacci.bas          # FreeBASIC source
+├── c++/
+│   └── fibonnaci.cpp          # C++ source
+├── fortran/
+│   └── fibonacci.f90          # Fortran source
+├── go/
+│   └── fibonacci.go           # Go source
+├── java/
+│   └── Fibonacci.java         # Java source
+├── kotlin/
+│   └── fibonacci.kt           # Kotlin source
+├── lisp/
+│   └── fibonacci.lisp         # Common Lisp source
+├── nodejs/
+│   └── fibonacci.js           # Node.js source
 ├── objc/
-│   ├── fibonacci.m        # Objective-C source
-│   └── Makefile           # Build configuration
-├── README.md              # This file
-└── (compiled files)       # Generated during compilation
+│   ├── fibonacci.m            # Objective-C source
+│   └── Makefile               # Build configuration
+├── pascal/
+│   └── fibonnaci.pas          # Turbo Pascal source
+├── php/
+│   └── fibonacci.php          # PHP source
+├── python/
+│   └── fibonacci.py           # Python source
+├── ruby/
+│   └── fibonacci.rb           # Ruby source
+├── rust/
+│   └── fibonacci.rs           # Rust source
+├── swift/
+│   └── fibonacci.swift        # Swift source
+├── typescript/
+│   ├── fibonacci.ts           # TypeScript source
+│   ├── package.json           # Node.js dependencies
+│   └── tsconfig.json          # TypeScript config
+├── .gitignore                 # Git ignore rules
+└── README.md                  # This file
 ```
+
+---
+
+## General Troubleshooting
+
+**Problem:** Screen doesn't clear
+- **Solution:** Screen clearing may not work in all terminals. This doesn't affect functionality.
+
+**Problem:** Program exits immediately
+- **Solution:** The program waits for ENTER at the end. Run in an interactive terminal, not with redirected input.
+
+---
+
+## Prerequisites
+
+This guide assumes you have [Homebrew](https://brew.sh/) installed on macOS. If you don't have Homebrew, install it first:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+---
 
 ## License
 
