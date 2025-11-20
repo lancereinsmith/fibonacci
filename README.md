@@ -1,6 +1,6 @@
 # Enhanced Fibonacci Sequence Generator
 
-A multi-language implementation of an enhanced Fibonacci sequence generator with interactive menu options, statistics, and multiple display modes. Available in **Turbo Pascal**, **C++**, and **Java**.
+A multi-language implementation of an enhanced Fibonacci sequence generator with interactive menu options, statistics, and multiple display modes. Available in **Turbo Pascal**, **C++**, **Java**, **Common Lisp**, **Go**, **Fortran**, and **Node.js**.
 
 ## Features
 
@@ -75,6 +75,63 @@ java -version
 javac -version
 ```
 
+### 4. Install Common Lisp (SBCL)
+
+Install Steel Bank Common Lisp via Homebrew:
+
+```bash
+brew install sbcl
+```
+
+Verify installation:
+
+```bash
+sbcl --version
+```
+
+### 5. Install Go
+
+Install Go via Homebrew:
+
+```bash
+brew install go
+```
+
+Verify installation:
+
+```bash
+go version
+```
+
+### 6. Install Fortran Compiler (GFortran)
+
+Install GFortran via Homebrew:
+
+```bash
+brew install gcc
+```
+
+This installs GCC which includes gfortran. Verify installation:
+
+```bash
+gfortran --version
+```
+
+### 7. Install Node.js
+
+Install Node.js via Homebrew:
+
+```bash
+brew install node
+```
+
+Verify installation:
+
+```bash
+node --version
+npm --version
+```
+
 ## Compilation & Running
 
 ### Turbo Pascal (`fibonnaci.pas`)
@@ -133,6 +190,85 @@ java Fibonacci
 
 **Note:** Java uses ANSI escape codes for colors. If colors don't appear, your terminal may not support them, but the program will still function correctly.
 
+### Common Lisp (`fibonacci.lisp`)
+
+**Run directly with SBCL:**
+
+```bash
+sbcl --script fibonacci.lisp
+```
+
+**Or compile and run:**
+
+```bash
+# Start SBCL
+sbcl
+
+# In the SBCL REPL:
+(load "fibonacci.lisp")
+```
+
+**Note:** The Lisp version uses ANSI escape codes for colors. For best results, run in a terminal that supports ANSI codes.
+
+### Go (`fibonacci.go`)
+
+**Compile:**
+
+```bash
+go build fibonacci.go
+```
+
+This creates an executable named `fibonacci` in the same directory.
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Or compile and run in one step:**
+
+```bash
+go run fibonacci.go
+```
+
+**Note:** Go uses ANSI escape codes for colors, which work in most modern terminals.
+
+### Fortran (`fibonacci.f90`)
+
+**Compile:**
+
+```bash
+gfortran -o fibonacci fibonacci.f90
+```
+
+This creates an executable named `fibonacci`.
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Note:** The Fortran version uses ANSI escape codes for colors. Modern Fortran compilers like GFortran support these well.
+
+### Node.js (`fibonacci.js`)
+
+**Run directly:**
+
+```bash
+node fibonacci.js
+```
+
+**Or make it executable and run:**
+
+```bash
+chmod +x fibonacci.js
+./fibonacci.js
+```
+
+**Note:** The Node.js version uses BigInt for arbitrary precision arithmetic, allowing it to calculate up to 1476 terms before running into JavaScript's Number precision limits. It uses ANSI escape codes for colors which work in most modern terminals.
+
 ## Program Usage
 
 When you run any of the programs, you'll see a menu:
@@ -184,6 +320,10 @@ Generates Fibonacci numbers in a neatly aligned column format (10 numbers per li
 - **Pascal:** Up to 46 terms (using `LongInt`)
 - **C++:** Up to 92 terms (using `long long`)
 - **Java:** Up to 92 terms (using `long`)
+- **Common Lisp:** Up to 92 terms (using fixnum/bignum, but limited to 92 for consistency)
+- **Go:** Up to 92 terms (using `int64`)
+- **Fortran:** Up to 92 terms (using `integer(kind=8)`)
+- **Node.js:** Up to 1476 terms (using `BigInt` for arbitrary precision)
 
 ### Color Support
 
@@ -194,6 +334,10 @@ All programs use ANSI escape codes for terminal colors. If your terminal doesn't
 - **Pascal:** Free Pascal is cross-platform; this code is compatible with Turbo Pascal
 - **C++:** Standard C++11 features; compatible with Clang and GCC
 - **Java:** Java 8+ compatible; uses standard Java libraries only
+- **Common Lisp:** SBCL compatible; should work with other Common Lisp implementations
+- **Go:** Go 1.11+ compatible; uses standard library only
+- **Fortran:** Fortran 90+ standard; compatible with GFortran and other modern compilers
+- **Node.js:** Node.js 10.4.0+ (requires BigInt support); uses built-in modules only
 
 ## Troubleshooting
 
@@ -231,6 +375,66 @@ All programs use ANSI escape codes for terminal colors. If your terminal doesn't
 
 - **Solution:** Java uses ANSI escape codes. If your terminal doesn't support them, the program will still work without colors.
 
+### Common Lisp Issues
+
+**Problem:** `sbcl: command not found`
+
+- **Solution:** Make sure SBCL is properly installed: `brew install sbcl`
+
+**Problem:** Script exits immediately
+
+- **Solution:** When using `--script`, make sure the file is executable or run it with `sbcl --script fibonacci.lisp`
+
+**Problem:** Colors don't appear
+
+- **Solution:** ANSI escape codes may not work in all terminals. Try Terminal.app or iTerm2.
+
+### Go Issues
+
+**Problem:** `go: command not found`
+
+- **Solution:** Make sure Go is properly installed and in your PATH: `brew install go`
+
+**Problem:** Colors don't appear
+
+- **Solution:** Go uses ANSI escape codes. Most modern terminals support them by default.
+
+**Problem:** Import errors
+
+- **Solution:** Make sure you're running Go 1.11 or later: `go version`
+
+### Fortran Issues
+
+**Problem:** `gfortran: command not found`
+
+- **Solution:** Install GCC which includes gfortran: `brew install gcc`
+
+**Problem:** Compilation errors
+
+- **Solution:** Make sure you're using a Fortran 90+ compatible compiler. GFortran should work out of the box.
+
+**Problem:** Colors don't appear
+
+- **Solution:** The program uses ANSI escape codes. If your terminal doesn't support them, you can modify the color constants in the source code.
+
+### Node.js Issues
+
+**Problem:** `node: command not found`
+
+- **Solution:** Install Node.js: `brew install node`
+
+**Problem:** `SyntaxError: BigInt is not defined`
+
+- **Solution:** Make sure you're using Node.js 10.4.0 or later: `node --version`. Update if necessary: `brew upgrade node`
+
+**Problem:** Colors don't appear
+
+- **Solution:** Node.js uses ANSI escape codes. Most modern terminals (Terminal.app, iTerm2) support them by default.
+
+**Problem:** Permission denied when running `./fibonacci.js`
+
+- **Solution:** Make the file executable: `chmod +x fibonacci.js`
+
 ### General Issues
 
 **Problem:** Screen doesn't clear
@@ -244,12 +448,23 @@ All programs use ANSI escape codes for terminal colors. If your terminal doesn't
 ## File Structure
 
 ```text
-tp/
-├── fibonnaci.pas      # Turbo Pascal source
-├── fibonnaci.cpp      # C++ source
-├── Fibonacci.java     # Java source
-├── README.md          # This file
-└── (compiled files)   # Generated during compilation
+fibonacci/
+├── pascal/
+│   └── fibonnaci.pas      # Turbo Pascal source
+├── c++/
+│   └── fibonnaci.cpp      # C++ source
+├── java/
+│   └── Fibonacci.java     # Java source
+├── lisp/
+│   └── fibonacci.lisp     # Common Lisp source
+├── go/
+│   └── fibonacci.go       # Go source
+├── fortran/
+│   └── fibonacci.f90      # Fortran source
+├── nodejs/
+│   └── fibonacci.js       # Node.js source
+├── README.md              # This file
+└── (compiled files)       # Generated during compilation
 ```
 
 ## License
