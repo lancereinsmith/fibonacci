@@ -1,6 +1,6 @@
 # Enhanced Fibonacci Sequence Generator
 
-A multi-language implementation of an enhanced Fibonacci sequence generator with interactive menu options, statistics, and multiple display modes. Available in **Turbo Pascal**, **C++**, **Java**, **Common Lisp**, **Go**, **Fortran**, **Node.js**, **Swift**, **Ruby**, **Kotlin**, **Rust**, and **PHP**.
+A multi-language implementation of an enhanced Fibonacci sequence generator with interactive menu options, statistics, and multiple display modes. Available in **Turbo Pascal**, **C++**, **Java**, **Common Lisp**, **Go**, **Fortran**, **Node.js**, **Swift**, **Ruby**, **Kotlin**, **Rust**, **PHP**, **Python**, **FreeBASIC**, **TypeScript**, and **Objective-C**.
 
 ## Features
 
@@ -207,6 +207,90 @@ For the latest version, install via Homebrew:
 
 ```bash
 brew install php
+```
+
+### 13. Install Python 3
+
+Python 3 comes pre-installed on macOS. Verify installation:
+
+```bash
+python3 --version
+```
+
+For the latest version, install via Homebrew:
+
+```bash
+brew install python
+```
+
+### 14. Install FreeBASIC
+
+FreeBASIC is not available via Homebrew. Download and install manually from the official website:
+
+**Option 1: Download Pre-built Binary (Recommended)**
+
+1. Visit [https://www.freebasic.net/](https://www.freebasic.net/)
+2. Download the macOS package (usually `FreeBASIC-x.xx.x-darwin.tar.gz`)
+3. Extract and install:
+
+```bash
+tar -xzf FreeBASIC-*.tar.gz
+cd FreeBASIC-*-darwin
+sudo ./install.sh -i
+```
+
+**Option 2: Install via MacPorts (if you have MacPorts)**
+
+```bash
+sudo port install freebasic
+```
+
+Verify installation:
+
+```bash
+fbc -version
+```
+
+**Note:** You may need to add FreeBASIC to your PATH. If `fbc` is not found, add this to your `~/.zshrc` or `~/.bash_profile`:
+
+```bash
+export PATH="/usr/local/bin:$PATH"
+```
+
+### 15. Install TypeScript
+
+Install TypeScript and ts-node via npm (comes with Node.js):
+
+```bash
+npm install -g typescript ts-node
+```
+
+Or install project dependencies:
+
+```bash
+cd typescript
+npm install
+```
+
+Verify installation:
+
+```bash
+tsc --version
+ts-node --version
+```
+
+### 16. Objective-C Compiler
+
+Objective-C compiler (clang) comes with Xcode Command Line Tools on macOS. Verify installation:
+
+```bash
+clang --version
+```
+
+If not installed:
+
+```bash
+xcode-select --install
 ```
 
 ## Compilation & Running
@@ -439,6 +523,93 @@ chmod +x fibonacci.php
 
 **Note:** PHP has arbitrary precision with integers, supporting up to 1476 terms. ANSI colors work in most terminals.
 
+### Python (`fibonacci.py`)
+
+**Run directly:**
+
+```bash
+python3 fibonacci.py
+```
+
+**Or make it executable and run:**
+
+```bash
+chmod +x fibonacci.py
+./fibonacci.py
+```
+
+**Note:** Python has built-in arbitrary precision integers, supporting up to 1476 terms. ANSI colors work in most terminals. Works with Python 3.6+.
+
+### FreeBASIC (`fibonacci.bas`)
+
+**Compile:**
+
+```bash
+fbc fibonacci.bas
+```
+
+This creates an executable named `fibonacci` (or `fibonacci.exe` on Windows).
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Note:** FreeBASIC uses LongInt (64-bit), supporting max 92 terms. ANSI colors work in most terminals. FreeBASIC is a modern, free BASIC compiler compatible with QuickBASIC.
+
+### TypeScript (`fibonacci.ts`)
+
+**Option 1: Run with ts-node (Development)**
+
+```bash
+cd typescript
+npm install  # First time only
+npx ts-node fibonacci.ts
+```
+
+**Option 2: Compile and run (Production)**
+
+```bash
+cd typescript
+npm install  # First time only
+npm run build
+npm start
+```
+
+**Option 3: Compile manually**
+
+```bash
+cd typescript
+tsc fibonacci.ts
+node fibonacci.js
+```
+
+**Note:** TypeScript uses BigInt for arbitrary precision, supporting up to 1476 terms. Requires Node.js 10.4.0+ for BigInt support.
+
+### Objective-C (`fibonacci.m`)
+
+**Compile with Makefile:**
+
+```bash
+cd objc
+make
+```
+
+**Or compile directly with clang:**
+
+```bash
+clang -framework Foundation -fobjc-arc -o fibonacci fibonacci.m
+```
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Note:** Objective-C uses long long (64-bit), supporting max 92 terms. Uses Foundation framework and ARC (Automatic Reference Counting). Native to macOS with excellent performance.
+
 ## Program Usage
 
 When you run any of the programs, you'll see a menu:
@@ -499,6 +670,10 @@ Generates Fibonacci numbers in a neatly aligned column format (10 numbers per li
 - **Kotlin:** Up to 92 terms (using `Long`)
 - **Rust:** Up to 92 terms (using `i64`)
 - **PHP:** Up to 1476 terms (arbitrary precision integers)
+- **Python:** Up to 1476 terms (arbitrary precision integers)
+- **FreeBASIC:** Up to 92 terms (using `LongInt`)
+- **TypeScript:** Up to 1476 terms (using `BigInt` for arbitrary precision)
+- **Objective-C:** Up to 92 terms (using `long long`)
 
 ### Color Support
 
@@ -518,6 +693,10 @@ All programs use ANSI escape codes for terminal colors. If your terminal doesn't
 - **Kotlin:** Kotlin 1.3+ compatible; requires JVM to run
 - **Rust:** Rust 1.40+ compatible; uses standard library only
 - **PHP:** PHP 7.0+ compatible; uses standard functions only
+- **Python:** Python 3.6+ compatible; uses standard library only
+- **FreeBASIC:** FreeBASIC 1.0+ compatible; cross-platform (macOS, Linux, Windows)
+- **TypeScript:** TypeScript 4.0+; requires Node.js 10.4.0+ for BigInt support
+- **Objective-C:** macOS/iOS compatible; uses Foundation framework
 
 ## Troubleshooting
 
@@ -689,6 +868,86 @@ All programs use ANSI escape codes for terminal colors. If your terminal doesn't
 
 - **Solution:** PHP uses ANSI escape codes. Most terminals support them by default.
 
+### Python Issues
+
+**Problem:** `python3: command not found`
+
+- **Solution:** Python 3 should be pre-installed on macOS. If missing, install via Homebrew: `brew install python`
+
+**Problem:** Permission denied when running `./fibonacci.py`
+
+- **Solution:** Make the file executable: `chmod +x fibonacci.py`
+
+**Problem:** Colors don't appear
+
+- **Solution:** Python uses ANSI escape codes. Most terminals support them by default.
+
+**Problem:** `ModuleNotFoundError`
+
+- **Solution:** This program uses only Python's standard library. Make sure you're using Python 3.6 or later: `python3 --version`
+
+### FreeBASIC Issues
+
+**Problem:** `fbc: command not found`
+
+- **Solution:** FreeBASIC is not available via Homebrew. Download from [freebasic.net](https://www.freebasic.net/) or install via MacPorts: `sudo port install freebasic`
+
+**Problem:** Installation script fails
+
+- **Solution:** Make sure you run the install script with sudo: `sudo ./install.sh -i`. You may need to grant permissions in System Preferences → Security & Privacy.
+
+**Problem:** Compilation errors
+
+- **Solution:** Make sure you're using FreeBASIC 1.0 or later: `fbc -version`
+
+**Problem:** Colors don't appear
+
+- **Solution:** FreeBASIC uses ANSI escape codes. Most modern terminals support them.
+
+**Problem:** `Error: No such file or directory`
+
+- **Solution:** FreeBASIC requires explicit compilation. Use: `fbc fibonacci.bas` then `./fibonacci`
+
+**Problem:** PATH not set after installation
+
+- **Solution:** Add FreeBASIC to your PATH by adding `export PATH="/usr/local/bin:$PATH"` to your `~/.zshrc` file, then run `source ~/.zshrc`
+
+### TypeScript Issues
+
+**Problem:** `tsc: command not found` or `ts-node: command not found`
+
+- **Solution:** Install TypeScript and ts-node: `npm install -g typescript ts-node` or run `npm install` in the typescript directory
+
+**Problem:** `Cannot find module` errors
+
+- **Solution:** Run `npm install` in the typescript directory to install dependencies
+
+**Problem:** BigInt errors
+
+- **Solution:** Make sure you're using Node.js 10.4.0+ and TypeScript 3.2+. Update if necessary: `npm install -g typescript@latest`
+
+**Problem:** Compilation target errors
+
+- **Solution:** The tsconfig.json is configured for ES2020. Make sure your Node.js version supports this target.
+
+### Objective-C Issues
+
+**Problem:** `clang: command not found`
+
+- **Solution:** Install Xcode Command Line Tools: `xcode-select --install`
+
+**Problem:** `framework not found Foundation`
+
+- **Solution:** This usually means Xcode Command Line Tools aren't properly installed. Try: `sudo xcode-select --reset`
+
+**Problem:** Compilation errors with ARC
+
+- **Solution:** The code uses Automatic Reference Counting (ARC). Make sure you compile with `-fobjc-arc` flag.
+
+**Problem:** `make: command not found`
+
+- **Solution:** Install Xcode Command Line Tools or compile directly: `clang -framework Foundation -fobjc-arc -o fibonacci fibonacci.m`
+
 ### General Issues
 
 **Problem:** Screen doesn't clear
@@ -727,6 +986,17 @@ fibonacci/
 │   └── fibonacci.rs       # Rust source
 ├── php/
 │   └── fibonacci.php      # PHP source
+├── python/
+│   └── fibonacci.py       # Python source
+├── basic/
+│   └── fibonacci.bas      # FreeBASIC source
+├── typescript/
+│   ├── fibonacci.ts       # TypeScript source
+│   ├── package.json       # Node.js dependencies
+│   └── tsconfig.json      # TypeScript config
+├── objc/
+│   ├── fibonacci.m        # Objective-C source
+│   └── Makefile           # Build configuration
 ├── README.md              # This file
 └── (compiled files)       # Generated during compilation
 ```

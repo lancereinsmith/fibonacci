@@ -1,0 +1,20 @@
+{
+  "name": "fibonacci-typescript",
+  "version": "1.0.0",
+  "description": "Enhanced Fibonacci Sequence Generator in TypeScript",
+  "main": "fibonacci.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node fibonacci.js",
+    "dev": "ts-node fibonacci.ts"
+  },
+  "keywords": ["fibonacci", "typescript"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  }
+}
+
