@@ -1,6 +1,6 @@
 # Enhanced Fibonacci Sequence Generator
 
-A multi-language implementation of an enhanced Fibonacci sequence generator with interactive menu options, statistics, and multiple display modes. Available in **Turbo Pascal**, **C++**, **Java**, **Common Lisp**, **Go**, **Fortran**, and **Node.js**.
+A multi-language implementation of an enhanced Fibonacci sequence generator with interactive menu options, statistics, and multiple display modes. Available in **Turbo Pascal**, **C++**, **Java**, **Common Lisp**, **Go**, **Fortran**, **Node.js**, **Swift**, **Ruby**, **Kotlin**, **Rust**, and **PHP**.
 
 ## Features
 
@@ -130,6 +130,83 @@ Verify installation:
 ```bash
 node --version
 npm --version
+```
+
+### 8. Install Swift
+
+Swift comes pre-installed on macOS with Xcode Command Line Tools. Verify installation:
+
+```bash
+swift --version
+```
+
+If not installed, install Xcode Command Line Tools:
+
+```bash
+xcode-select --install
+```
+
+### 9. Install Ruby
+
+Ruby comes pre-installed on macOS. Verify installation:
+
+```bash
+ruby --version
+```
+
+For the latest version, install via Homebrew:
+
+```bash
+brew install ruby
+```
+
+### 10. Install Kotlin
+
+Install Kotlin compiler via Homebrew:
+
+```bash
+brew install kotlin
+```
+
+Verify installation:
+
+```bash
+kotlin -version
+```
+
+### 11. Install Rust
+
+Install Rust via rustup (the recommended way):
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Or via Homebrew:
+
+```bash
+brew install rust
+```
+
+Verify installation:
+
+```bash
+rustc --version
+cargo --version
+```
+
+### 12. Install PHP
+
+PHP comes pre-installed on macOS. Verify installation:
+
+```bash
+php --version
+```
+
+For the latest version, install via Homebrew:
+
+```bash
+brew install php
 ```
 
 ## Compilation & Running
@@ -269,6 +346,99 @@ chmod +x fibonacci.js
 
 **Note:** The Node.js version uses BigInt for arbitrary precision arithmetic, allowing it to calculate up to 1476 terms before running into JavaScript's Number precision limits. It uses ANSI escape codes for colors which work in most modern terminals.
 
+### Swift (`fibonacci.swift`)
+
+**Run directly:**
+
+```bash
+swift fibonacci.swift
+```
+
+**Or make it executable and run:**
+
+```bash
+chmod +x fibonacci.swift
+./fibonacci.swift
+```
+
+**Or compile for better performance:**
+
+```bash
+swiftc -o fibonacci fibonacci.swift
+./fibonacci
+```
+
+**Note:** Swift uses Int64 for 64-bit integers (max 92 terms). ANSI colors work in modern terminals.
+
+### Ruby (`fibonacci.rb`)
+
+**Run directly:**
+
+```bash
+ruby fibonacci.rb
+```
+
+**Or make it executable and run:**
+
+```bash
+chmod +x fibonacci.rb
+./fibonacci.rb
+```
+
+**Note:** Ruby has arbitrary precision integers, supporting up to 1476 terms. ANSI colors work in most terminals.
+
+### Kotlin (`fibonacci.kt`)
+
+**Compile and run using kotlinc:**
+
+```bash
+kotlinc fibonacci.kt -include-runtime -d fibonacci.jar
+java -jar fibonacci.jar
+```
+
+**Or run as a script (requires Kotlin 1.3.70+):**
+
+```bash
+kotlin fibonacci.kt
+```
+
+**Note:** Kotlin uses Long (64-bit) for integers, supporting max 92 terms. Compilation can be slow; use script mode for faster development.
+
+### Rust (`fibonacci.rs`)
+
+**Compile:**
+
+```bash
+rustc fibonacci.rs
+```
+
+This creates an executable named `fibonacci`.
+
+**Run:**
+
+```bash
+./fibonacci
+```
+
+**Note:** Rust uses i64 (64-bit signed integers), supporting max 92 terms. The compiled binary is highly optimized and fast.
+
+### PHP (`fibonacci.php`)
+
+**Run directly:**
+
+```bash
+php fibonacci.php
+```
+
+**Or make it executable and run:**
+
+```bash
+chmod +x fibonacci.php
+./fibonacci.php
+```
+
+**Note:** PHP has arbitrary precision with integers, supporting up to 1476 terms. ANSI colors work in most terminals.
+
 ## Program Usage
 
 When you run any of the programs, you'll see a menu:
@@ -324,6 +494,11 @@ Generates Fibonacci numbers in a neatly aligned column format (10 numbers per li
 - **Go:** Up to 92 terms (using `int64`)
 - **Fortran:** Up to 92 terms (using `integer(kind=8)`)
 - **Node.js:** Up to 1476 terms (using `BigInt` for arbitrary precision)
+- **Swift:** Up to 92 terms (using `Int64`)
+- **Ruby:** Up to 1476 terms (arbitrary precision integers)
+- **Kotlin:** Up to 92 terms (using `Long`)
+- **Rust:** Up to 92 terms (using `i64`)
+- **PHP:** Up to 1476 terms (arbitrary precision integers)
 
 ### Color Support
 
@@ -338,6 +513,11 @@ All programs use ANSI escape codes for terminal colors. If your terminal doesn't
 - **Go:** Go 1.11+ compatible; uses standard library only
 - **Fortran:** Fortran 90+ standard; compatible with GFortran and other modern compilers
 - **Node.js:** Node.js 10.4.0+ (requires BigInt support); uses built-in modules only
+- **Swift:** Swift 5.0+ compatible; works on macOS, Linux, and Windows
+- **Ruby:** Ruby 2.0+ compatible; uses standard library only
+- **Kotlin:** Kotlin 1.3+ compatible; requires JVM to run
+- **Rust:** Rust 1.40+ compatible; uses standard library only
+- **PHP:** PHP 7.0+ compatible; uses standard functions only
 
 ## Troubleshooting
 
@@ -435,6 +615,80 @@ All programs use ANSI escape codes for terminal colors. If your terminal doesn't
 
 - **Solution:** Make the file executable: `chmod +x fibonacci.js`
 
+### Swift Issues
+
+**Problem:** `swift: command not found`
+
+- **Solution:** Install Xcode Command Line Tools: `xcode-select --install`
+
+**Problem:** Compilation is slow
+
+- **Solution:** Swift is an optimizing compiler. For faster iteration, use interpreted mode: `swift fibonacci.swift`
+
+**Problem:** Colors don't appear
+
+- **Solution:** Make sure you're using a terminal that supports ANSI escape codes.
+
+### Ruby Issues
+
+**Problem:** `ruby: command not found`
+
+- **Solution:** Ruby should be pre-installed on macOS. If missing, install via Homebrew: `brew install ruby`
+
+**Problem:** Permission denied when running `./fibonacci.rb`
+
+- **Solution:** Make the file executable: `chmod +x fibonacci.rb`
+
+**Problem:** Colors don't appear
+
+- **Solution:** Ruby uses ANSI escape codes. Most terminals support them by default.
+
+### Kotlin Issues
+
+**Problem:** `kotlinc: command not found`
+
+- **Solution:** Install Kotlin: `brew install kotlin`
+
+**Problem:** Compilation takes a long time
+
+- **Solution:** Kotlin compilation can be slow. Consider using script mode: `kotlin fibonacci.kt` (may require Kotlin 1.3.70+)
+
+**Problem:** `java: command not found` when running the JAR
+
+- **Solution:** Kotlin requires Java to run. Install OpenJDK: `brew install openjdk`
+
+**Problem:** Colors don't appear
+
+- **Solution:** ANSI escape codes should work in most terminals.
+
+### Rust Issues
+
+**Problem:** `rustc: command not found`
+
+- **Solution:** Install Rust via rustup: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+**Problem:** Compilation warnings
+
+- **Solution:** Rust is strict about safety. The code should compile without warnings. If you see warnings, they're informational.
+
+**Problem:** Colors don't appear
+
+- **Solution:** Rust uses ANSI escape codes. Most modern terminals support them.
+
+### PHP Issues
+
+**Problem:** `php: command not found`
+
+- **Solution:** PHP should be pre-installed on macOS. If missing, install via Homebrew: `brew install php`
+
+**Problem:** Permission denied when running `./fibonacci.php`
+
+- **Solution:** Make the file executable: `chmod +x fibonacci.php`
+
+**Problem:** Colors don't appear
+
+- **Solution:** PHP uses ANSI escape codes. Most terminals support them by default.
+
 ### General Issues
 
 **Problem:** Screen doesn't clear
@@ -463,6 +717,16 @@ fibonacci/
 │   └── fibonacci.f90      # Fortran source
 ├── nodejs/
 │   └── fibonacci.js       # Node.js source
+├── swift/
+│   └── fibonacci.swift    # Swift source
+├── ruby/
+│   └── fibonacci.rb       # Ruby source
+├── kotlin/
+│   └── fibonacci.kt       # Kotlin source
+├── rust/
+│   └── fibonacci.rs       # Rust source
+├── php/
+│   └── fibonacci.php      # PHP source
 ├── README.md              # This file
 └── (compiled files)       # Generated during compilation
 ```
