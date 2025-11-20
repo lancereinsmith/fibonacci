@@ -1,3 +1,12 @@
+#Compiled code
+c++/fibonnaci
+pascal/fibonnaci
+go/fibonacci
+fortran/fibonacci
+swift/fibonacci
+rust/fibonacci
+kotlin/fibonacci.jar
+
 # Prerequisites
 *.d
 
@@ -64,10 +73,8 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
-c++/fibonnaci
-pascal/fibonnaci
-go/fibonacci
-fortran/fibonacci
+
+
 
 # Prerequisites
 *.d
