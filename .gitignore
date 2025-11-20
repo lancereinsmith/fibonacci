@@ -1,15 +1,15 @@
 # =============================================================================
 # Project-Specific Compiled Binaries
 # =============================================================================
-c++/fibonnaci
-pascal/fibonnaci
-go/fibonacci
-fortran/fibonacci
-swift/fibonacci
-rust/fibonacci
-kotlin/fibonacci.jar
 basic/fibonacci
+c++/fibonnaci
+fortran/fibonacci
+go/fibonacci
+kotlin/fibonacci.jar
 objc/fibonacci
+pascal/fibonnaci
+rust/fibonacci
+swift/fibonacci
 
 # =============================================================================
 # Common Patterns (All Languages)
